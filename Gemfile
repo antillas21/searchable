@@ -26,6 +26,7 @@ group :development do
   gem 'quiet_assets'
   gem 'letter_opener'
   gem 'puma'  
+  gem 'progress_bar'
 end
 
 group :development, :test do
