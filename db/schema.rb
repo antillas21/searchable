@@ -11,7 +11,26 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130208014130) do
+ActiveRecord::Schema.define(:version => 20130208014712) do
+
+  create_table "addresses", :force => true do |t|
+    t.string   "street_name", :limit => 128
+    t.string   "section",     :limit => 128
+    t.string   "city",        :limit => 90
+    t.string   "state",       :limit => 50
+    t.string   "zip",         :limit => 20
+    t.string   "country",     :limit => 80
+    t.integer  "user_id"
+    t.datetime "created_at",                 :null => false
+    t.datetime "updated_at",                 :null => false
+  end
+
+  add_index "addresses", ["city"], :name => "index_addresses_on_city"
+  add_index "addresses", ["country"], :name => "index_addresses_on_country"
+  add_index "addresses", ["state"], :name => "index_addresses_on_state"
+  add_index "addresses", ["street_name"], :name => "index_addresses_on_street_name"
+  add_index "addresses", ["user_id"], :name => "index_addresses_on_user_id"
+  add_index "addresses", ["zip"], :name => "index_addresses_on_zip"
 
   create_table "users", :force => true do |t|
     t.string   "first_name"
