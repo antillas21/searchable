@@ -36,6 +36,12 @@ group :development, :test do
   gem 'faker'
 end
 
+group :test do
+  gem 'database_cleaner'
+  # gem 'shoulda-matchers', '1.4.2'
+  # gem 'capybara', '2.0.1'
+end
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
