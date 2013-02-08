@@ -2,10 +2,10 @@
 
 FactoryGirl.define do
   factory :user do
-    first_name "MyString"
-    last_name "MyString"
-    nickname "MyString"
-    email "MyString"
-    phone_number "MyString"
+    first_name { Faker::Name.first_name }
+    last_name { Faker::Name.last_name }
+    nickname { Faker::Name.first_name }
+    email { Faker::Internet.free_email }
+    phone_number { Faker::PhoneNumber.phone_number }
   end
 end
